@@ -1,13 +1,23 @@
 import './App.css';
-import Hola from './components/Hola';
+import { Contador } from './components/Contador';
+import  Listado  from './components/Listado';
+import Temperatura from './components/Temperatura';
+import Formulario from './components/Formulario';
 
 function App() {
+
   return (
-    <div className="App">
+
+    <div className="App mt-5">
       <h1>App in React</h1>
-      <Hola></Hola>
+      <h2>Probando Componentes</h2>
+      <Contador/>
+      <Listado/>
+      <Temperatura/>
+      <Formulario/>
     </div>
-  );
+
+);
 }
 
 export default App;
