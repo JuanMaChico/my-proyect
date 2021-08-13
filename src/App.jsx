@@ -1,9 +1,13 @@
+import React from "react";
+import ListadoDeNombres from "./components/ListadoDeNombres";
+
 
 function App() {
 
   return (
 
-    <div className="App">
+    <div className="container">
+      <ListadoDeNombres/>
     </div>
 
 );
