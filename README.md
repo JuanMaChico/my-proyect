@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+https://www.udemy.com/course/aprende-react-firebase-2021-actualizado
+
 ## Available Scripts
 
 In the project directory, you can run:
