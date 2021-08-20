@@ -5,6 +5,8 @@ const ListadoDeNombres = () => {
 
     const [nombre, setNombre] = useState('');
     const [listanombres, setListaNombres] = useState([]);
+    const [modoEdicion, setmodoEdicion] = useState(false);
+    const [id,setId] = useState('');
 
     const addNombres = (e) => {
         e.preventDefault();
@@ -18,6 +20,18 @@ const ListadoDeNombres = () => {
     const deleteNombre = (id) =>{
         const nuevoArray = listanombres.filter(item => item.id !== id);
         setListaNombres(nuevoArray);
+    }
+    const editar = ( item ) =>{
+        setmodoEdicion(true);
+        setNombre(item.tituloNombre);
+        setId(item.id);
+    }
+    const editarNombre = (e) =>{
+        e.preventDefault();
+        const NuevoArray = listanombres.map(item => item.id === id ? {id:id, tituloNombre:nombre}: item);
+        setListaNombres(NuevoArray);
+        setNombre('');
+        setmodoEdicion(false);
     }
 
     return (
@@ -36,6 +50,7 @@ const ListadoDeNombres = () => {
                                     key="item.id" 
                                     className="list-group-item">{item.tituloNombre}
                                     <bottom onClick={() => {deleteNombre(item.id)}} className="btn btn-outline-danger float-end">Borrar</bottom>
+                                    <bottom onClick={() => {editar(item)}} className="btn btn-outline-info float-end">Editar</bottom>
                                 </li> 
                             )
                         }
@@ -45,7 +60,7 @@ const ListadoDeNombres = () => {
                 <div className="col">
                     <h2>Formulario Para añadir nombres</h2>
 
-                    <form onSubmit={(e) => addNombres(e)} className="form-group">
+                    <form onSubmit={modoEdicion ? editarNombre : addNombres} className="form-group">
 
                         <input 
                             onChange={(e)=>{ setNombre(e.target.value) }} 
@@ -57,7 +72,7 @@ const ListadoDeNombres = () => {
                         <input 
                             className="btn btn-info btn-block" 
                             type="submit" 
-                            alue="Registrar Nombre" 
+                            value={modoEdicion ? "Editar Nombre" : "Registrar Nombre"}
                         />
                     
                     </form>
