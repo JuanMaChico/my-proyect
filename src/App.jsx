@@ -1,34 +1,34 @@
 import React from "react";
-import Bienvenida from "./components/Bienvenida";
-import Card from "./components/Card";
+import Inicio from "./components/Inicio";
+import Base from "./components/Base";
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 function App() {
     return (
-        <div>
-            <h1>Propiedades de los Componentes</h1>
-            <Bienvenida nombre="Juan Manuel" />
-            <Bienvenida nombre="Carlos" />
-            <Bienvenida nombre="Sasha" />
-            <Bienvenida nombre="Gato" />
-            <br />
-            <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-                <Card
-                    imagen="https://loremflickr.com/120/120"
-                    titulo="Juan Manuel"
-                    texto="lo que sea"
-                />
-                <Card
-                    imagen="https://loremflickr.com/120/120"
-                    titulo="Juan Manuel"
-                    texto="lo que sea"
-                />
-                <Card
-                    imagen="https://loremflickr.com/120/120"
-                    titulo="Juan Manuel"
-                    texto="lo que sea"
-                />
-            </div>
-        </div>
+        
+        <Router>
+            
+            <Switch>
+                
+                <Route exact path="/">
+                    <h1>URL BASE</h1>
+                    <Base/>
+                </Route>
+                
+                <Route path="/Inicio">
+                    <h1>Inicio</h1>
+                    <Inicio/>
+                </Route>
+            
+            </Switch>
+            
+        </Router>
     );
 }
 
