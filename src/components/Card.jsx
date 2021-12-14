@@ -7,7 +7,7 @@ function Card( props ) {
     const { imagen, titulo, texto } = props;
     
     return (
-            <div className='card' style={{width:"200rem"}} >
+            <div className='card' style={{width:"20rem"}} >
                 <img src={ imagen } className='card-img-top' alt='...' />
                 <div className='card-body'>
                     <h5 className='card-title' >{ titulo }</h5>
