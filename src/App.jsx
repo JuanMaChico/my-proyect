@@ -12,14 +12,16 @@ import {
 function App() {
 	return (
 		<Router>
+
+			<Link to="/Inicio" >Inicio</Link>
+			<Link to="/" >Base</Link>
+
 			<Switch>
 				<Route exact path="/">
-					<h1>URL BASE</h1>
 					<Base />
 				</Route>
 
-				<Route path="/Inicio">
-					<h1>Inicio</h1>
+				<Route path="/Inicio/:nombre">
 					<Inicio />
 				</Route>
 			</Switch>

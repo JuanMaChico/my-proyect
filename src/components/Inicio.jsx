@@ -1,10 +1,14 @@
 import React from "react";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 const Inicio = () => {
+
+	const { nombre } = useParams();
+
 	return (
 		<div>
-			<h1 style={{color:"red"}}>Componente Inicio</h1>
-			<h2>hola mundo</h2>
+			<h1>Componente Inicio</h1>
+			<p>{nombre}</p>
 		</div>
 	);
 };
