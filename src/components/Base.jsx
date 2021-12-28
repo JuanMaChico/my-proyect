@@ -3,7 +3,7 @@ import React from "react";
 const Base = () => {
 	return (
 		<div>
-			<h1>Componennte Base</h1>
+			<h1>Componente Base</h1>
 		</div>
 	);
 };
