@@ -1,11 +1,11 @@
 import React from "react";
-import Title from "./components/Title";
+import Calendario from "./components/Calendario";
 
 function App() {
 
 
 	return (
-		<Title/>
+		<Calendario/>
 	);
 }
 

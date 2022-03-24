@@ -10,7 +10,7 @@ ReactDOM.render(
 
 <React.StrictMode>
 
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+    <MuiPickersUtilsProvider utils={ DateFnsUtils } >
 
       <App />
 
